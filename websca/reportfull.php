@@ -7,11 +7,11 @@
 
 <!DOCTYPE html>
 <HTML>
-<!-- Modified: Date       = 2014 Jan 02 -->
+<!-- Modified: Date       = 2014 Jan 06 -->
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.6';
+	$sver = '1.0.8';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -144,9 +144,18 @@ function toggle(className)
 	echo "<H2><HR />Server Information</H2>\n";
 	echo "\n<TABLE WIDTH=100%>\n";
 	echo "<TR><TD><B>Analysis Date:</B></TD><TD>$ReportDate $ReportTime</TD></TR>\n";
-	if( isset($FileLocation) ) {
-		echo "<TR><TD><B>Archive File:</B></TD><TD><A HREF=\"$FileLocation/$Filename\">$Filename</A></TD></TR>\n";
+	if( strlen($FileLocation) > 0 ) {
+		echo "<!-- FileLocation set: '$FileLocation' -->\n";
+		$pos = strpos($FileLocation, 'file://');
+		if( $pos === false ) {
+			echo "<!-- file:// not in FileLocation -->\n";
+			echo "<TR><TD><B>Archive File:</B></TD><TD><A HREF=\"$FileLocation/$Filename\">$Filename</A></TD></TR>\n";
+		} else {
+			echo "<!-- file:// found in FileLocation at $pos -->\n";
+			echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
+		}
 	} else {
+		echo "<!-- FileLocation NOT set -->\n";
 		echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
 	}
 	echo "</TABLE>\n";
