@@ -145,17 +145,13 @@ function toggle(className)
 	echo "\n<TABLE WIDTH=100%>\n";
 	echo "<TR><TD><B>Analysis Date:</B></TD><TD>$ReportDate $ReportTime</TD></TR>\n";
 	if( strlen($FileLocation) > 0 ) {
-		echo "<!-- FileLocation set: '$FileLocation' -->\n";
 		$pos = strpos($FileLocation, 'file://');
 		if( $pos === false ) {
-			echo "<!-- file:// not in FileLocation -->\n";
 			echo "<TR><TD><B>Archive File:</B></TD><TD><A HREF=\"$FileLocation/$Filename\">$Filename</A></TD></TR>\n";
 		} else {
-			echo "<!-- file:// found in FileLocation at $pos -->\n";
 			echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
 		}
 	} else {
-		echo "<!-- FileLocation NOT set -->\n";
 		echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
 	}
 	echo "</TABLE>\n";
