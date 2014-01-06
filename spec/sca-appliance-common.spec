@@ -57,6 +57,7 @@ install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/sca
 
 %changelog
 * Mon Jan 06 2014 jrecord@suse.com
+- changed Internal to SRView
 - Archive File links of file:// are not supported for hyper links
 
 * Thu Jan 02 2014 jrecord@suse.com

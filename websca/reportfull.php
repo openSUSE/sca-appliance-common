@@ -11,7 +11,7 @@
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.8';
+	$sver = '1.0.9';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -163,7 +163,9 @@ function toggle(className)
 	echo "\n<TABLE CELLPADDING=\"5\">\n";
 	echo "<TR><TD>&nbsp;</TD></TR>\n";
 	if ( $SRNum > 0 ) {
-		if ( isset($Internal) ) {
+		if ( $SRView == 0 ) {
+			echo "<TR><TD><B>SR#:</B></TD><TD><A HREF=\"https://secure-www.novell.com/center/eservice/\" TARGET=\"_blank\">$SRNum</A></TD></TR>\n";
+		} elseif ($SRView == 1 ) {
 			echo "<TR><TD><B>SR#:</B></TD><TD><A HREF=\"https://crystal10.innerweb.novell.com/CE10/viewer.jsp?id=4843&prompts=SRID=$SRNum\" TARGET=\"_blank\">$SRNum</A></TD></TR>\n";
 		} else {
 			echo "<TR><TD><B>SR#:</B></TD><TD>$SRNum</TD></TR>\n";
