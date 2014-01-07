@@ -18,7 +18,7 @@ Vendor:       SUSE Support
 License:      GPLv2
 Autoreqprov:  on
 Version:      1.2
-Release:      1.140106.PTF.1
+Release:      1.140107.PTF.1
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -56,7 +56,8 @@ install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/sca
 /srv/www/htdocs/sca/*
 
 %changelog
-* Mon Jan 06 2014 jrecord@suse.com
+* Mon Jan 07 2014 jrecord@suse.com
+- fixed pattern report identifier link
 - changed Internal to SRView
 - Archive File links of file:// are not supported for hyper links
 

@@ -1,3 +1,4 @@
+<!-- Modified: Date       = 2014 Jan 07 -->
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -7,11 +8,16 @@
 
 <!DOCTYPE html>
 <HTML>
-<!-- Modified: Date       = 2014 Jan 06 -->
+<script>
+function showPattern(patternOutput,patternLocation)
+{
+alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
+}
+</script>
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.9';
+	$sver = '1.0.10';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -30,8 +36,6 @@
 		}
 	}
 	echo "<!-- Parameters: Values   = givenArchiveID='$givenArchiveID' -->\n";
-
-	$FPAT_URL = 'https://code.google.com/p/server-diagnostic-patterns/source/browse/trunk/packages/patterns';
 
 // ** SUMMARY DATA ** //
 	include 'db-open.php';
@@ -292,7 +296,7 @@ function loadRow()
 {
 	global $ColorCritical, $ColorWarning, $ColorRecommended, $ColorSuccess, $ColorWhite, $ColorGray, $ColorDarkGray, $ColorBeige, $ColorBlack, $ColorBlue, $ColorSectionText, $ColorSection;
 	global $WidthSeverity, $WidthClass, $WidthCategory, $WidthComponent, $WidthSolutions;
-	global $SubClassRows, $severity, $DisplaySet, $SeverityColor, $Class, $Category, $Component, $PrimLink, $ResultStr, $FPAT_URL, $PatternLocation, $TID, $BUG, $URLS;
+	global $SubClassRows, $severity, $DisplaySet, $SeverityColor, $Class, $Category, $Component, $PrimLink, $ResultStr, $PatternLocation, $TID, $BUG, $URLS;
 	global $i;
 
 	$SubClassRows[$i] = "<TR STYLE=\"border:1px solid black; background: $ColorWhite; display:$DisplaySet;\" CLASS=\"$Class\">";
@@ -301,9 +305,9 @@ function loadRow()
 	$SubClassRows[$i] = "$SubClassRows[$i]<TD BGCOLOR=\"$ColorGray\" WIDTH=\"$WidthCategory\">$Category</TD>";
 	$SubClassRows[$i] = "$SubClassRows[$i]<TD BGCOLOR=\"$ColorGray\" WIDTH=\"$WidthComponent\">$Component</TD>";
 	if ( isset($PrimLink) ) {
-		$SubClassRows[$i] = "$SubClassRows[$i]<TD><A HREF=\"$PrimLink\" TARGET=\"_blank\">$ResultStr</A>&nbsp;&nbsp;<A HREF=\"$FPAT_URL/$PatternLocation\" TARGET=\"_blank\">&nbsp;</A></TD>";
+		$SubClassRows[$i] = "$SubClassRows[$i]<TD><A HREF=\"$PrimLink\" TARGET=\"_blank\">$ResultStr</A>&nbsp;&nbsp;<A ID=\"PatternLocation\" HREF=\"#\" onClick=\"showPattern('$ResultStr','$PatternLocation');return false;\">&nbsp;</A></TD>";
 	} else {
-		$SubClassRows[$i] = "$SubClassRows[$i]<TD>$ResultStr&nbsp;&nbsp;<A HREF=\"$FPAT_URL/$PatternLocation\" TARGET=\"_blank\">&nbsp;</A></TD>";
+		$SubClassRows[$i] = "$SubClassRows[$i]<TD>$ResultStr&nbsp;&nbsp;<A ID=\"PatternLocation\" HREF=\"#\" onClick=\"showPattern('$ResultStr','$PatternLocation');return false;\">&nbsp;</A></TD>";
 	}
 	$SubClassRows[$i] = "$SubClassRows[$i]<TD WIDTH=\"$WidthSolutions\">";
 	if ( isset($TID) ) { $SubClassRows[$i] = "$SubClassRows[$i]<A HREF=\"$TID\" TARGET=\"_blank\">TID</A>&nbsp;&nbsp;"; }
