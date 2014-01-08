@@ -12,10 +12,11 @@
 
 Name:         sca-appliance-common
 Summary:      Supportconfig Analysis Appliance Common Files
+URL:          https://bitbucket.org/g23guy/sca-appliance-common
 Group:        Documentation/SuSE
 Distribution: SUSE Linux Enterprise
 Vendor:       SUSE Support
-License:      GPLv2
+License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.2
 Release:      1.140107.PTF.1
