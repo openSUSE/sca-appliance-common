@@ -16,7 +16,7 @@ session_start();
   <body bgcolor="#999999"> 
     <div align="center">
     <H1 ALIGN="center">Supportconfig Analysis Appliance <br> Please login</H1>
-    <P ALIGN="center"><A HREF="docs.html" TARGET="docs">Documentation</A></P>
+    <P ALIGN="center">[ <A HREF="docs.html" TARGET="docs">Documentation</A> | <A HREF="../sdp" TARGET="sdp">Creating Patterns</A> ]</P>
       <form name="login" method="post" style="margin: 0 auto;">
 	<table>
 	  <tr><td>Username </td><td><input type="text" name="text1" value="<?php echo $username; ?>"></td></tr>
