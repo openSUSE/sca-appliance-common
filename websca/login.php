@@ -13,6 +13,9 @@ session_start();
 ?>
 
 <html>
+  <head>
+  <title>Login Screen</title>
+  </head>
   <body bgcolor="#999999"> 
     <div align="center">
     <H1 ALIGN="center">Supportconfig Analysis Appliance <br> Please login</H1>
