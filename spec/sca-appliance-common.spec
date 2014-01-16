@@ -1,14 +1,10 @@
-# Copyright (C) 2013 SUSE LLC
+# Copyright (C) 2013,2014 SUSE LLC
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
 # norootforbuild
 # neededforbuild
 %define sca_common sca
-
-##################################################################
-## Update FPAT_URL in reportfull.php before release
-##################################################################
 
 Name:         sca-appliance-common
 Summary:      Supportconfig Analysis Appliance Common Files
@@ -18,8 +14,8 @@ Distribution: SUSE Linux Enterprise
 Vendor:       SUSE Support
 License:      GPL-2.0
 Autoreqprov:  on
-Version:      1.2
-Release:      2
+Version:      1.3
+Release:      0
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -33,7 +29,7 @@ Requires:     /usr/bin/awk
 Requires:     /bin/ping
 
 %description
-Provides the common files needed by both the Broker and the Agent.
+Provides the common files needed by both the SCA Broker and Agent.
 
 Authors:
 --------
@@ -47,17 +43,18 @@ Authors:
 %install
 pwd;ls -la
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/srv/www/htdocs/sca
-install -m 644 websca/* $RPM_BUILD_ROOT/srv/www/htdocs/sca
-install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/sca
+install -d $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
+install -m 644 websca/* $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
+install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 
 %files
 %defattr(-,wwwrun,www)
-%dir /srv/www/htdocs/sca
-/srv/www/htdocs/sca/*
+%dir /srv/www/htdocs/%{sca_common}
+/srv/www/htdocs/%{sca_common}/*
 
 %changelog
-* Wed Jan 15 2014 jrecord@suse.com
+* Thu Jan 16 2014 jrecord@suse.com
+- cleaned up spec file
 - added pattern link to login screen
 - fixed pattern report identifier link
 - changed Internal to SRView

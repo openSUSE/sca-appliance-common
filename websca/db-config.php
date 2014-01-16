@@ -9,7 +9,7 @@
 	$User = 'sdbroker';
 	$Password = "${User}_password";
 	$Database = 'ServerDiagnostics';
-	$SCDIAG_HOME = '/var/opt/scdiag';
+	$SCDIAG_HOME = '/usr/lib/sca/';
 	$DBHost = 'localhost';
 	$ResourceRefresh = 300;
 	$StatsRefresh = 15;
