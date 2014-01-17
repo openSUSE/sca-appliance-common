@@ -15,7 +15,7 @@ Vendor:       SUSE Support
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      0
+Release:      1
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -54,6 +54,7 @@ install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 
 %changelog
 * Thu Jan 16 2014 jrecord@suse.com
+- clean up unused variable
 - cleaned up spec file
 - added pattern link to login screen
 - fixed pattern report identifier link
