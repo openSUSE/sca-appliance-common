@@ -1,4 +1,4 @@
-<!-- Modified: Date            = 2014 Jan 22 -->
+//<!-- Modified: Date            = 2014 Jan 22 -->
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
