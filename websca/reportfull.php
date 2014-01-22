@@ -1,4 +1,4 @@
-<!-- Modified: Date       = 2014 Jan 07 -->
+<!-- Modified: Date            = 2014 Jan 22 -->
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -23,31 +23,31 @@ alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
 		if ( ! is_numeric($givenArchiveID) ) {
 			die("<FONT SIZE=\"-1\"><B>ERROR</B>: Invalid ArchiveID, Only numeric values allowed.</FONT><BR>");			
 		}
-		echo "<!-- Parameters: CmdLine  = argc='$argc', argv[1]='$argv[1]' -->\n";
+		//echo "<!-- Parameters: CmdLine  = argc='$argc', argv[1]='$argv[1]' -->\n";
 	} else {
 		if ( isset($_GET) ) {
 			$givenArchiveID = $_GET['aid'];
 			if ( ! is_numeric($givenArchiveID) ) {
 				die("<FONT SIZE=\"-1\"><B>ERROR</B>: Invalid ArchiveID, Only numeric values allowed.</FONT><BR>");			
 			}
-			echo "<!-- Parameters: GET      = _GET['aid']='$givenArchiveID' -->\n";
+			//echo "<!-- Parameters: GET      = _GET['aid']='$givenArchiveID' -->\n";
 		} else {
 			die("<FONT SIZE=\"-1\"><B>ERROR</B>: Missing ArchiveID and/or server name</FONT><BR>");
 		}
 	}
-	echo "<!-- Parameters: Values   = givenArchiveID='$givenArchiveID' -->\n";
+	//echo "<!-- Parameters: Values   = givenArchiveID='$givenArchiveID' -->\n";
 
 // ** SUMMARY DATA ** //
 	include 'db-open.php';
 	$query="SELECT * FROM Archives WHERE ArchiveID=$givenArchiveID";
 	$result=mysql_query($query);
 	$num=mysql_numrows($result);
-	echo "<!-- Query: Submitted     = $query -->\n";
+	//echo "<!-- Query: Submitted     = $query -->\n";
 	if ( $result ) {
-		echo "<!-- Query: Result        = Success -->\n";
-		echo "<!-- Query: Rows          = $num -->\n";
+		//echo "<!-- Query: Result        = Success -->\n";
+		//echo "<!-- Query: Rows          = $num -->\n";
 	} else {
-		echo "<!-- Query: Results       = FAILURE -->\n";
+		//echo "<!-- Query: Results       = FAILURE -->\n";
 	}
 	include 'db-close.php';
 	$row_cell = mysql_fetch_row($result);
@@ -217,16 +217,16 @@ function toggle(className)
 		echo "\n<H2>Conditions Evaluated as $SeverityTag[$severity]<A NAME=\"$SeverityTag[$severity]\"></A></H2>\n";
 		if ( $SeverityPatterns[$severity] > 0 ) {
 			include 'db-open.php';
-			echo "<!-- Patterns:            = $SeverityTag[$severity], $SeverityPatterns[$severity] -->\n";
+			//echo "<!-- Patterns:            = $SeverityTag[$severity], $SeverityPatterns[$severity] -->\n";
 			$query="SELECT Class, Category, Component, ResultStr, PatternID, PatternLocation, PrimaryLink, TID, BUG, URL01, URL02, URL03, URL04, URL05, URL06, URL07, URL08, URL09, URL10 FROM Results WHERE ResultsArchiveID=$givenArchiveID AND Result=$severity ORDER BY Class, Category, Component, ResultStr";
 			$result=mysql_query($query);
 			$num=mysql_numrows($result);
-			echo "<!-- Query: Submitted     = $query -->\n";
+			//echo "<!-- Query: Submitted     = $query -->\n";
 			if ( $result ) {
-				echo "<!-- Query: Result        = Success -->\n";
-				echo "<!-- Query: Rows          = $num -->\n";
+				//echo "<!-- Query: Result        = Success -->\n";
+				//echo "<!-- Query: Rows          = $num -->\n";
 			} else {
-				echo "<!-- Query: Results       = FAILURE -->\n";
+				//echo "<!-- Query: Results       = FAILURE -->\n";
 			}
 			include 'db-close.php';
 
@@ -257,7 +257,7 @@ function toggle(className)
 				$DisplaySet = 'none';
 
 				if ( isset($NewClass) ) {
-					echo "<!-- Variable: NewClass = $NewClass, Class = $Class -->\n";
+					//echo "<!-- Variable: NewClass = $NewClass, Class = $Class -->\n";
 					if ( "$NewClass" != "$Class" ) {
 						//Create the first table row in the collapsible Class
 						$SubClassCount = count($SubClassRows);
@@ -270,7 +270,7 @@ function toggle(className)
 					}
 					loadRow();
 				} else {
-					echo "<!-- Variable: NewClass = Not Set, Assigning to $Class -->\n";
+					//echo "<!-- Variable: NewClass = Not Set, Assigning to $Class -->\n";
 					$NewClass = $Class;
 					loadRow();
 				}
@@ -322,7 +322,7 @@ function loadRow()
 		}
 	}
 	$SubClassRows[$i] = "$SubClassRows[$i]</TD><TD BGCOLOR=\"$SeverityColor[$severity]\" WIDTH=\"$WidthSeverity\">&nbsp;</TD></TR>";
-	echo "<!-- loadRow: SubClassRows[$i] = $SubClassRows[$i] -->\n";
+	//echo "<!-- loadRow: SubClassRows[$i] = $SubClassRows[$i] -->\n";
 }
 
 function printHeaderRow()
@@ -331,7 +331,7 @@ function printHeaderRow()
 	global $WidthSeverity, $WidthClass, $WidthCategory, $WidthComponent, $WidthSolutions;
 	global $SubClassCount, $severity, $SeverityColor, $SeverityTag, $NewClass;
 
-	echo "<!-- printHeaderRow: SubClassCount = $SubClassCount -->\n";
+	//echo "<!-- printHeaderRow: SubClassCount = $SubClassCount -->\n";
 	echo "<TR STYLE=\"border:1px solid black;color: $ColorSectionText; background: $ColorSection; font-size:80%; font-weight:normal\">";
 	echo "<TD BGCOLOR=\"$SeverityColor[$severity]\" WIDTH=\"$WidthSeverity\">&nbsp;</TD>";
 	echo "<TD BGCOLOR=\"$ColorSection\" WIDTH=\"$WidthClass\"><A ID=\"NewClass\" TITLE=\"Click to Expand/Collapse\" HREF=\"#\" onClick=\"toggle('$NewClass');return false;\">$NewClass</A></TD>";
@@ -347,7 +347,7 @@ function printRows()
 {
 	global $SubClassCount, $SubClassRows;
 
-	echo "<!-- printRows: Printing $SubClassCount Rows -->\n";
+	//echo "<!-- printRows: Printing $SubClassCount Rows -->\n";
 	for ( $x=0; $x < $SubClassCount; $x++ ) {
 		echo "$SubClassRows[$x]\n";
 	}

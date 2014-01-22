@@ -1,3 +1,4 @@
+<!-- Modified: Date            = 2014 Jan 22 -->
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -7,5 +8,5 @@
 
 <?PHP
 	mysql_close($DBConn) or die("<FONT SIZE=\"-1\"><B>ERROR</B>: Unable to close database: $Database</FONT><BR>");
-	echo "<!-- Database: Status          = Closed -->\n\n";
+	//echo "<!-- Database: Status          = Closed -->\n\n";
 ?>
