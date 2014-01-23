@@ -1,4 +1,5 @@
- <?php
+<?PHP //echo "<!-- Modified: Date       = 2014 Jan 22 -->\n"; ?>
+<?PHP
 session_start();
 #if User needs to login
 if(!isset($_SESSION['luser']))

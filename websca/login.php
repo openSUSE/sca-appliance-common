@@ -1,4 +1,5 @@
- <?php
+<?PHP //echo "<!-- Modified: Date       = 2014 Jan 22 -->\n"; ?>
+<?PHP
 #Setup Password
 $username = "scdiag";
 $password = "linux";
@@ -22,7 +23,7 @@ session_start();
     <P ALIGN="center">[ <A HREF="docs.html" TARGET="docs">Documentation</A> | <A HREF="../sdp" TARGET="sdp">Create Patterns</A> ]</P>
       <form name="login" method="post" style="margin: 0 auto;">
 	<table>
-	  <tr><td>Username </td><td><input type="text" name="text1" value="<?php echo $username; ?>"></td></tr>
+	  <tr><td>Username </td><td><input type="text" name="text1" value="<?PHP echo $username; ?>"></td></tr>
 	  <tr><td>Password</td><td><input type="password" name="pwd"></td></tr>
 	  <tr><td><input type="submit" value="SignIn" name="submit1"> </td></tr>
 	</table>
@@ -31,7 +32,7 @@ session_start();
   </body>
 </html>
 
-<?php
+<?PHP
 if($_POST['submit1'])
 {
   $user = $_POST['text1'];
