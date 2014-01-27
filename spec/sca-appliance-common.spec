@@ -13,7 +13,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      5
+Release:      5.140127.PTF.1
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -51,6 +51,9 @@ install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 /srv/www/htdocs/%{sca_common}/*
 
 %changelog
+* Mon Jan 27 2014 jrecord@suse.com
+- added supportconfig run date to reportfull.php
+
 * Wed Jan 22 2014 jrecord@suse.com
 - commented out debug statements to avoid xss
 

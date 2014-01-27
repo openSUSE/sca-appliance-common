@@ -1,4 +1,4 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Jan 22 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 Jan 27 -->\n"; ?>
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -17,7 +17,7 @@ alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.10';
+	$sver = '1.0.15';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -151,13 +151,14 @@ function toggle(className)
 	if( strlen($FileLocation) > 0 ) {
 		$pos = strpos($FileLocation, 'file://');
 		if( $pos === false ) {
-			echo "<TR><TD><B>Archive File:</B></TD><TD><A HREF=\"$FileLocation/$Filename\">$Filename</A></TD></TR>\n";
+			echo "<TR><TD><B>Supportconfig File:</B></TD><TD><A HREF=\"$FileLocation/$Filename\">$Filename</A></TD></TR>\n";
 		} else {
-			echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
+			echo "<TR><TD><B>Supportconfig File:</B></TD><TD>$Filename</TD></TR>\n";
 		}
 	} else {
-		echo "<TR><TD><B>Archive File:</B></TD><TD>$Filename</TD></TR>\n";
+		echo "<TR><TD><B>Supportconfig File:</B></TD><TD>$Filename</TD></TR>\n";
 	}
+	echo "<TR><TD><B>Supportconfig Run Date:</B></TD><TD>$ArchiveDate $ArchiveTime</TD></TR>\n";
 	echo "</TABLE>\n";
 
 	echo "\n<TABLE CELLPADDING=\"5\">\n";
