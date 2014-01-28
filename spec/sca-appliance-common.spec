@@ -13,7 +13,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      6
+Release:      7
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -43,14 +43,21 @@ pwd;ls -la
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 install -m 644 websca/* $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
-install -m 400 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
+install -m 600 websca/db-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
+install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 
 %files
 %defattr(-,wwwrun,www)
 %dir /srv/www/htdocs/%{sca_common}
 /srv/www/htdocs/%{sca_common}/*
+%config /srv/www/htdocs/%{sca_common}/db-config.php
+%config /srv/www/htdocs/%{sca_common}/web-config.php
 
 %changelog
+* Tue Jan 28 2014 jrecord@suse.com
+- changed supportconfig run date order
+- added web-config.php for use by login.php
+
 * Mon Jan 27 2014 jrecord@suse.com
 - added supportconfig run date to reportfull.php
 

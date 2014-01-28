@@ -1,12 +1,7 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Jan 22 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 Jan 28 -->\n"; ?>
 <?PHP
 #Setup Password
-$username = "scdiag";
-$password = "linux";
-
-#number of minutes in a session
-$sessionLength = 30;
-
+include 'web-config.php';
 
 #Code based on Rafee's post on http://stackoverflow.com/questions/520237/how-do-i-expire-a-php-session-after-30-minutes
 #start new session
