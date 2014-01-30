@@ -13,7 +13,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      7
+Release:      8
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -54,7 +54,8 @@ install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common
 %config /srv/www/htdocs/%{sca_common}/web-config.php
 
 %changelog
-* Tue Jan 28 2014 jrecord@suse.com
+* Thu Jan 30 2014 jrecord@suse.com
+- chage reportfull.php info table width
 - changed supportconfig run date order
 - added web-config.php for use by login.php
 

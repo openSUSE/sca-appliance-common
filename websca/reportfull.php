@@ -1,4 +1,4 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Jan 28 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 Jan 30 -->\n"; ?>
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -17,7 +17,7 @@ alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.16';
+	$sver = '1.0.17';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -146,7 +146,7 @@ function toggle(className)
 	echo "<BODY BGPROPERTIES=FIXED BGCOLOR=\"#FFFFFF\" TEXT=\"#000000\">\n";
 	echo "\n<H1>Supportconfig Analysis Report</H1>\n";
 	echo "<H2><HR />Server Information</H2>\n";
-	echo "\n<TABLE WIDTH=100%>\n";
+	echo "\n<TABLE CELLPADDING=\"5\">\n";
 	echo "<TR><TD><B>Analysis Date:</B></TD><TD>$ReportDate $ReportTime</TD></TR>\n";
 	echo "<TR><TD><B>Supportconfig Run Date:</B></TD><TD>$ArchiveDate $ArchiveTime</TD></TR>\n";
 	if( strlen($FileLocation) > 0 ) {
