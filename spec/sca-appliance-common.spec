@@ -1,4 +1,7 @@
-# Copyright (C) 2013,2014 SUSE LLC
+# spec file for package sca-appliance-common
+#
+# Copyright (C) 2014 SUSE LLC
+#
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
@@ -13,7 +16,7 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      8
+Release:      9
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -54,25 +57,4 @@ install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common
 %config /srv/www/htdocs/%{sca_common}/web-config.php
 
 %changelog
-* Thu Jan 30 2014 jrecord@suse.com
-- chage reportfull.php info table width
-- changed supportconfig run date order
-- added web-config.php for use by login.php
-
-* Mon Jan 27 2014 jrecord@suse.com
-- added supportconfig run date to reportfull.php
-
-* Wed Jan 22 2014 jrecord@suse.com
-- commented out debug statements to avoid xss
-
-* Thu Jan 16 2014 jrecord@suse.com
-- clean up unused variable
-- cleaned up spec file
-- added pattern link to login screen
-- fixed pattern report identifier link
-- changed Internal to SRView
-- Archive File links of file:// are not supported for hyper links
-
-* Thu Jan 02 2014 jrecord@suse.com
-- initialized
 

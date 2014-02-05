@@ -1,0 +1,28 @@
+-------------------------------------------------------------------
+Fri Jan 31 19:29:22 UTC 2014 - jrecord@suse.com
+
+- chage reportfull.php info table width
+- changed supportconfig run date order
+- added web-config.php for use by login.php
+- added supportconfig run date to reportfull.php
+
+-------------------------------------------------------------------
+Wed Jan 22 07:08:16 MST 2014 jrecord@suse.com
+
+- Commented out debug statements to avoid xss
+
+-------------------------------------------------------------------
+Thu Jan 16 07:08:16 MST 2014 jrecord@suse.com
+
+- Clean up unused variable
+- Cleaned up spec file
+- Added pattern link to login screen
+- Fixed pattern report identifier link
+- Changed Internal to SRView
+- Archive File links of file:// are not supported for hyper links
+
+-------------------------------------------------------------------
+Thu Jan 02 07:08:16 MST 2014 jrecord@suse.com
+
+- initialized
+
