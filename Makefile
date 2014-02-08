@@ -1,5 +1,5 @@
 OBSPACKAGE=sca-appliance-common
-SVNDIRS=websca
+SVNDIRS=websca docs
 VERSION=$(shell awk '/Version:/ { print $$2 }' spec/${OBSPACKAGE}.spec)
 RELEASE=$(shell awk '/Release:/ { print $$2 }' spec/${OBSPACKAGE}.spec)
 SRCDIR=$(OBSPACKAGE)-$(VERSION)
