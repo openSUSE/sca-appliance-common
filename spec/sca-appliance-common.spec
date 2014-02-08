@@ -54,6 +54,7 @@ install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common
 %files
 %defattr(-,wwwrun,www)
 %dir /srv/www/htdocs/%{sca_common}
+%dir /usr/share/doc/packages/%{sca_common}
 /srv/www/htdocs/%{sca_common}/*
 %config /srv/www/htdocs/%{sca_common}/db-config.php
 %config /srv/www/htdocs/%{sca_common}/web-config.php
