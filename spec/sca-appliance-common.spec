@@ -16,12 +16,13 @@ Group:        Documentation/SuSE
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      10
+Release:      11
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
 Requires:     curl
 Requires:     php5, php5-bz2, php5-mbstring, php5-mcrypt, php5-mysql, php5-zip, php5-zlib
+Requires:     apache2-mod_php5
 Requires:     /bin/logger
 Requires:     /usr/bin/ssh
 Requires:     /usr/bin/mysql
