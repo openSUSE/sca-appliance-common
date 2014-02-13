@@ -1,7 +1,12 @@
 -------------------------------------------------------------------
+Tue Feb 11 22:19:42 UTC 2014 - jrecord@suse.com
+
+- Added requires apache2-mod_php5
+
+-------------------------------------------------------------------
 Fri Jan 31 19:29:22 UTC 2014 - jrecord@suse.com
 
-- chage reportfull.php info table width
+- changed reportfull.php info table width
 - changed supportconfig run date order
 - added web-config.php for use by login.php
 - added supportconfig run date to reportfull.php
