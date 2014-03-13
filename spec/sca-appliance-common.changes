@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Thu Mar 13 16:44:52 UTC 2014 - jrecord@suse.com
+
+- Change to System/Monitoring spec Group
+
+-------------------------------------------------------------------
 Tue Feb 11 22:19:42 UTC 2014 - jrecord@suse.com
 
 - Added requires apache2-mod_php5
