@@ -16,7 +16,7 @@ Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      12
+Release:      13
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -57,8 +57,6 @@ install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common
 %dir /srv/www/htdocs/%{sca_common}
 %dir /usr/share/doc/packages/%{sca_common}
 /srv/www/htdocs/%{sca_common}/*
-%config /srv/www/htdocs/%{sca_common}/db-config.php
-%config /srv/www/htdocs/%{sca_common}/web-config.php
 %doc /usr/share/doc/packages/%{sca_common}/*
 
 %changelog

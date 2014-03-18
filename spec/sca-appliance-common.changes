@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Tue Mar 18 22:17:43 UTC 2014 - jrecord@suse.com
+
+- Removed config file status for db-config.php and web-config.php
+
+-------------------------------------------------------------------
 Thu Mar 13 16:44:52 UTC 2014 - jrecord@suse.com
 
 - Change to System/Monitoring spec Group
