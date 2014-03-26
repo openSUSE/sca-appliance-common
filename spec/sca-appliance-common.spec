@@ -16,16 +16,16 @@ Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      13
+Release:      14
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
 Requires:     curl
-Requires:     php5, php5-bz2, php5-mbstring, php5-mcrypt, php5-mysql, php5-zip, php5-zlib
-Requires:     apache2-mod_php5
+Requires:     php, php-bz2, php-mbstring, php-mcrypt, php-mysql, php-zip
+Requires:     mod_php_any
 Requires:     /bin/logger
 Requires:     /usr/bin/ssh
-Requires:     /usr/bin/mysql
+Requires:     /usr/sbin/mysqld
 Requires:     /usr/bin/sed
 Requires:     /usr/bin/awk
 Requires:     /bin/ping

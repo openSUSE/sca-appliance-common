@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Mar 26 21:46:57 UTC 2014 - jrecord@suse.com
+
+- Updated Requires to more generic strings
+- Removed explicit dependency on php5-zlib
+
+-------------------------------------------------------------------
 Tue Mar 18 22:17:43 UTC 2014 - jrecord@suse.com
 
 - Removed config file status for db-config.php and web-config.php
