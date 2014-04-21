@@ -1,4 +1,4 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Jan 30 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 Apr 21 -->\n"; ?>
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -17,7 +17,7 @@ alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.17';
+	$sver = '1.0.18';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -189,7 +189,7 @@ function toggle(className)
 // ** ANALYSIS OVERVIEW ** //
 	echo "\n<H2>Analysis Overview</H2>\n";
 	echo "\n<TABLE STYLE=\"border:3px solid black;border-collapse:collapse;\">\n";
-	echo "<TR><TD>&nbsp;</TD><TD>Available Patterns:</TD><TD>$PatternsTested</TD><TD>&nbsp;</TD></TR>\n";
+	echo "<TR><TD>&nbsp;</TD><TD>Patterns Evaluated:</TD><TD>$PatternsTested</TD><TD>&nbsp;</TD></TR>\n";
 	echo "<TR><TD>&nbsp;</TD><TD>Applicable to Server:</TD><TD>$PatternsApplicable</TD><TD>&nbsp;</TD></TR>\n";
 	echo "<TR BGCOLOR=\"$ColorWhite\" STYLE=\"border:1px solid black;\"><TD BGCOLOR=\"$ColorCritical\">&nbsp;&nbsp;&nbsp;</TD>";
 	echo "<TD><a href=\"#Critical\">Critical:</a></TD><TD>$PatternsCritical</TD>";
