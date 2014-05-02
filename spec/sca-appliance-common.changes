@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri May  2 16:32:35 UTC 2014 - jrecord@suse.com
+
+- Changed PHP from requires to recommends, PHP available on web module
+
+-------------------------------------------------------------------
 Mon Apr 21 18:16:51 UTC 2014 - jrecord@suse.com
 
 - Report overview matches scatool
