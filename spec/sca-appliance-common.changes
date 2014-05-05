@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon May  5 15:11:05 UTC 2014 - jrecord@suse.com
+
+- Removed missing SR number field, only displays when SR found
+- Changed mode for db-*php and reportfull.php (bnc#876347)
+
+-------------------------------------------------------------------
 Fri May  2 16:32:35 UTC 2014 - jrecord@suse.com
 
 - Changed PHP from requires to recommends, PHP available on web module

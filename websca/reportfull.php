@@ -1,4 +1,4 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Apr 21 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 May 05 -->\n"; ?>
 <?PHP
 	if(isset($_SERVER['HTTP_USER_AGENT']))
 	{
@@ -17,7 +17,7 @@ alert(patternOutput + "\n\n" + "Pattern: " + patternLocation);
 <?PHP
 	ini_set('include_path', '/srv/www/htdocs/sca/');
 	include 'db-config.php';
-	$sver = '1.0.18';
+	$sver = '1.0.19';
 	if ( isset($argc) ) {
 		$givenArchiveID = $argv[1];
 		if ( ! is_numeric($givenArchiveID) ) {
@@ -171,8 +171,6 @@ function toggle(className)
 		} else {
 			echo "<TR><TD><B>SR#:</B></TD><TD>$SRNum</TD></TR>\n";
 		}
-	} else {
-		echo "<TR><TD><B>SR#:</B></TD><TD>Missing</TD></TR>\n";
 	}
 	echo "<TR><TD><B>Server Name:</B></TD><TD>$ServerName</TD><TD><B>Hardware:</B></TD><TD>$Hardware</TD></TR>\n";
 	echo "<TR><TD><B>Distribution:</B></TD><TD>$Distro ($Architecture)</TD><TD><B>Service Pack:</B></TD><TD>$DistroSP</TD></TR>\n";
