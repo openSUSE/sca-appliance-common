@@ -1,6 +1,7 @@
 -------------------------------------------------------------------
-Mon May  5 15:11:05 UTC 2014 - jrecord@suse.com
+Thu May  8 20:38:05 UTC 2014 - jrecord@suse.com
 
+- Moved to mysqli so db-*php have been replaced
 - Removed missing SR number field, only displays when SR found
 - Changed mode for db-*php and reportfull.php (bnc#876347)
 
