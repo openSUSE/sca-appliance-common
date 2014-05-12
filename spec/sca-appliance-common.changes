@@ -1,9 +1,9 @@
 -------------------------------------------------------------------
-Thu May  8 20:38:05 UTC 2014 - jrecord@suse.com
+Mon May 12 17:55:13 UTC 2014 - jrecord@suse.com
 
+- Fixed build errors for common directory
 - Moved to mysqli so db-*php have been replaced
 - Removed missing SR number field, only displays when SR found
-- Changed mode for db-*php and reportfull.php (bnc#876347)
 
 -------------------------------------------------------------------
 Fri May  2 16:32:35 UTC 2014 - jrecord@suse.com
