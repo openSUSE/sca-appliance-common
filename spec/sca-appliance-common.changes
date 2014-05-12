@@ -1,10 +1,10 @@
 -------------------------------------------------------------------
-Mon May 12 21:00:09 UTC 2014 - jrecord@suse.com
+Mon May 12 21:26:35 UTC 2014 - jrecord@suse.com
 
 - Moved reportfull.php to sca-appliance-broker and sca-appliance-agent
 - Fixed connection error
 - Fixed build errors for common directory
-- Moved to mysqli so db-*php have been replaced
+- Moved to mysqli so db-*php have been replaced (bnc#876918)
 - Removed missing SR number field, only displays when SR found
 
 -------------------------------------------------------------------
