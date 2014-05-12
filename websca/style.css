@@ -116,6 +116,13 @@ table.outlined	{
 	FONT-SIZE: 38px;
 	padding: 0px 0px 2px 6px;
 }
+.head_1b {
+	color: red;
+	font-family : Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 26px;
+	padding: 0px 0px 2px 6px;
+}
 .head_2 {
 	background-color: #587AB5;
 	color : #FFFFFF;

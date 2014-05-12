@@ -1,6 +1,7 @@
 -------------------------------------------------------------------
-Mon May 12 17:55:13 UTC 2014 - jrecord@suse.com
+Mon May 12 18:47:20 UTC 2014 - jrecord@suse.com
 
+- Fixed connection error
 - Fixed build errors for common directory
 - Moved to mysqli so db-*php have been replaced
 - Removed missing SR number field, only displays when SR found

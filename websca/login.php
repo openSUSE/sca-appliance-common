@@ -1,4 +1,4 @@
-<?PHP //echo "<!-- Modified: Date       = 2014 Jan 28 -->\n"; ?>
+<?PHP //echo "<!-- Modified: Date       = 2014 May 12 -->\n"; ?>
 <?PHP
 #Setup Password
 include 'web-config.php';
@@ -15,7 +15,7 @@ session_start();
   <body bgcolor="#999999"> 
     <div align="center">
     <H1 ALIGN="center">Supportconfig Analysis Appliance <br> Please login</H1>
-    <P ALIGN="center">[ <A HREF="docs.html" TARGET="docs">Documentation</A> | <A HREF="../sdp" TARGET="sdp">Create Patterns</A> ]</P>
+    <P ALIGN="center">[ <A HREF="docs.html" TARGET="docs">Documentation</A> ]</P>
       <form name="login" method="post" style="margin: 0 auto;">
 	<table>
 	  <tr><td>Username </td><td><input type="text" name="text1" value="<?PHP echo $username; ?>"></td></tr>
