@@ -19,7 +19,7 @@ Group:        System/Monitoring
 License:      GPL-2.0
 Autoreqprov:  on
 Version:      1.3
-Release:      20
+Release:      21
 Source:       %{name}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}
 Buildarch:    noarch
@@ -52,7 +52,6 @@ install -d $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 install -d $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
 install -m 444 docs/COPYING.GPLv2 $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
 install -m 644 websca/* $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
-install -m 400 websca/reportfull.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
 
 %files
