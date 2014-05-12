@@ -1,6 +1,7 @@
 -------------------------------------------------------------------
-Mon May 12 18:47:20 UTC 2014 - jrecord@suse.com
+Mon May 12 19:56:38 UTC 2014 - jrecord@suse.com
 
+- Moved reportfull.php to sca-appliance-broker and sca-appliance-agent
 - Fixed connection error
 - Fixed build errors for common directory
 - Moved to mysqli so db-*php have been replaced
