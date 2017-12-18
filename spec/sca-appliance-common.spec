@@ -1,44 +1,46 @@
+# 
 # spec file for package sca-appliance-common
 #
-# Copyright (C) 2014 SUSE LLC
+# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
 #
-# This file and all modifications and additions to the pristine
-# package are under the same license as the package itself.
-#
-# Source developed at:
-#  https://github.com/g23guy/sca-appliance-common
-#
-# norootforbuild
-# neededforbuild
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An "Open Source License" is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
+
 %define sca_common sca
+%define sca_libdir /usr/lib/%{sca_common}
+%define sca_webdir /srv/www/htdocs/%{sca_common}
+%define sca_configdir %{_sysconfdir}/%{sca_common}
 
 Name:         sca-appliance-common
+Version:      1.3
+Release:      0
 Summary:      Supportconfig Analysis Appliance Common Files
+License:      GPL-2.0
 URL:          https://github.com/g23guy/sca-appliance-common
 Group:        System/Monitoring
-License:      GPL-2.0
-Autoreqprov:  on
-Version:      1.3
-Release:      21
 Source:       %{name}-%{version}.tar.gz
-BuildRoot:    %{_tmppath}/%{name}-%{version}
-Buildarch:    noarch
 Requires:     curl
 Recommends:   php, php-bz2, php-mbstring, php-mcrypt, php-mysql, php-zip, php-zlib
 Recommends:   mod_php_any
-Requires:     /bin/logger
-Requires:     /usr/bin/ssh
-Requires:     /usr/sbin/mysqld
-Requires:     /usr/bin/sed
-Requires:     /usr/bin/awk
+Requires:     apache2
+Requires:     %{_sbindir}/mysqld
+Requires:     %{_bindir}/vmstat
+Requires:     %{_bindir}/ssh
+Requires:     %{_bindir}/sed
+Requires:     %{_bindir}/awk
+Requires:     %{_bindir}/dos2unix
 Requires:     /bin/ping
+Requires:     /bin/logger
+Buildarch:    noarch
 
 %description
-Provides the common files needed by both the SCA Broker and Agent.
-
-Authors:
---------
-    Jason Record <jrecord@suse.com>
+Provides the common files needed by both the SCA Broker, Agent and pattern development.
 
 %prep
 %setup -q
@@ -47,19 +49,24 @@ Authors:
 
 %install
 pwd;ls -la
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
-install -d $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
-install -m 444 docs/COPYING.GPLv2 $RPM_BUILD_ROOT/usr/share/doc/packages/%{sca_common}
-install -m 644 websca/* $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
-install -m 600 websca/web-config.php $RPM_BUILD_ROOT/srv/www/htdocs/%{sca_common}
+install -d %{buildroot}%{sca_libdir}
+install -d %{buildroot}%{sca_configdir}
+install -d %{buildroot}%{sca_webdir}
+install -d %{buildroot}%{_docdir}/%{name}
+install -d %{buildroot}/var/log/archives
+install -m 444 docs/COPYING.GPLv2 %{buildroot}%{_docdir}/%{name}
+install -m 644 websca/* %{buildroot}%{sca_webdir}
+install -m 600 websca/web-config.php %{buildroot}%{sca_webdir}
 
 %files
 %defattr(-,wwwrun,www)
-%dir /srv/www/htdocs/%{sca_common}
-%dir %attr(-,root,root) /usr/share/doc/packages/%{sca_common}
-/srv/www/htdocs/%{sca_common}/*
-%doc %attr(-,root,root) /usr/share/doc/packages/%{sca_common}/*
+%dir %{sca_webdir}
+%dir %attr(-,root,root) %{_docdir}/%{name}
+%dir %attr(775,root,users) /var/log/archives
+%{sca_webdir}/*
+%{sca_configdir}
+%{sca_libdir}
+%doc %attr(-,root,root) %{_docdir}/%{name}/*
 
 %changelog
 
