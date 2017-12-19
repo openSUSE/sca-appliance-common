@@ -59,14 +59,14 @@ install -m 644 websca/* %{buildroot}%{sca_webdir}
 install -m 600 websca/web-config.php %{buildroot}%{sca_webdir}
 
 %files
-%defattr(-,wwwrun,www)
-%dir %{sca_webdir}
-%dir %attr(-,root,root) %{_docdir}/%{name}
+%defattr(-,root,root)
+%dir %{sca_configdir}
+%dir %{sca_libdir}
+%dir %attr(-,wwwrun,www) %{sca_webdir}
+%dir %{_docdir}/%{name}
 %dir %attr(775,root,users) /var/log/archives
-%{sca_webdir}/*
-%{sca_configdir}
-%{sca_libdir}
-%doc %attr(-,root,root) %{_docdir}/%{name}/*
+%attr(-,wwwrun,www) %{sca_webdir}/*
+%doc %{_docdir}/%{name}/*
 
 %changelog
 
